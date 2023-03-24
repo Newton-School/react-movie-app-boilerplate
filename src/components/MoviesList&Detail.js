@@ -4,7 +4,7 @@ const MoviesList = (props) => {
     return (
         <ul>
             <li>
-                <img src={movie.Poster} alt="movie-alt" />
+                <img src={movie.poster_path} alt="movie-alt" />
                 <section className="title-year">
                     <h2 className="movie-title">Title</h2>
                     <p className="movie-release-year">Release Year: Year</p>
@@ -20,11 +20,11 @@ const MovieDetails = (props) => {
     return (
         <article className="movie-details">
             <section className="movie-detail-img">
-                <img src={movieDetails.Poster} alt="movie-poster-alt" className="movie-img"/>
+                <img src={movieDetails.poster_path} alt="movie-poster-alt" className="movie-img"/>
             </section>
             <section className="movie-detail-title-year-plot">
-                <h2 className="movie-title-year">Title (Year)</h2>
-                <p className="movie-plot">Plot</p>
+                <h2 className="movie-title-year">Title (Release Date)</h2>
+                <p className="movie-plot">Overview</p>
                 <button className="close-btn">Close</button>
             </section>
         </article>
