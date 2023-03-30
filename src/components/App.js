@@ -9,6 +9,24 @@ const App = () => {
   const [sortBy, setSortBy] = useState("ascending");
   const [selectedMovie, setSelectedMovie] = useState("");
 
+  // Sorting Movies by Release Year Logic
+  const sortedMovies = useMemo(() => {
+    if (movies.length === 0) {
+      return [];
+    }
+    return movies.sort((firstMovie, secondMovie) => {
+      const firstYear = firstMovie.release_date.split("-")[0];
+      const secondYear = secondMovie.release_date.split("-")[0];
+      const first = parseInt(firstYear);
+      const second = parseInt(secondYear);
+      if (sortBy === "descending") {
+        return first - second;
+      } else {
+        return second - first;
+      }
+    });
+  }, [movies, sortBy])
+
   return (
     <div id="main">
       <h1>Movie Search</h1>
